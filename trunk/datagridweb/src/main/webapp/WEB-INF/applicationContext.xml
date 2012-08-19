@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd" xmlns:tx="http://www.springframework.org/schema/tx">
+
+
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="persistenceUnitName" value="datagridweb" />
+	</bean>
+	<bean id="transactionManager"
+		class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory"
+			ref="entityManagerFactory" />
+	</bean>
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	
+	<bean
+		id="RelationshipDAO" class="com.datagrid.dao.RelationshipDAO">
+		<property name="entityManagerFactory"
+			ref="entityManagerFactory" />
+   </bean>
+	
+	<bean id="ItemTypeDAO" class="com.datagrid.dao.ItemTypeDAO">
+		<property name="entityManagerFactory"
+			ref="entityManagerFactory" />
+	</bean>
+	<bean id="ItemAttributeDAO"
+		class="com.datagrid.dao.ItemAttributeDAO">
+		<property name="entityManagerFactory"
+			ref="entityManagerFactory" />
+	</bean>
+	<bean id="ItemAttrTypeDatatypeDAO"
+		class="com.datagrid.dao.ItemAttrTypeDatatypeDAO">
+		<property name="entityManagerFactory"
+			ref="entityManagerFactory" />
+	</bean>
+	<bean id="RelationshipMappingDAO"
+		class="com.datagrid.dao.RelationshipMappingDAO">
+		<property name="entityManagerFactory"
+			ref="entityManagerFactory" />
+	</bean>
+	<bean id="ItemDAO" class="com.datagrid.dao.ItemDAO">
+		<property name="entityManagerFactory"
+			ref="entityManagerFactory" />
+	</bean>
+	<bean id="ItemRelationshipRuleBaseDAO"
+		class="com.datagrid.dao.ItemRelationshipRuleBaseDAO">
+		<property name="entityManagerFactory"
+			ref="entityManagerFactory" />
+	</bean>
+	<bean id="ImportJobsDAO" class="com.datagrid.dao.ImportJobsDAO">
+		<property name="entityManagerFactory"
+			ref="entityManagerFactory" />
+	</bean>
+	<bean id="RelationshipAttributeDAO"
+		class="com.datagrid.dao.RelationshipAttributeDAO">
+		<property name="entityManagerFactory"
+			ref="entityManagerFactory" />
+	</bean>
+	<bean id="RelationshipTypeDAO"
+		class="com.datagrid.dao.RelationshipTypeDAO">
+		<property name="entityManagerFactory"
+			ref="entityManagerFactory" />
+	</bean>
+	<bean id="RelationshipAttributeTypeDAO"
+		class="com.datagrid.dao.RelationshipAttributeTypeDAO">
+		<property name="entityManagerFactory"
+			ref="entityManagerFactory" />
+	</bean>
+	<bean id="ItemAttributeTypeDAO"
+		class="com.datagrid.dao.ItemAttributeTypeDAO">
+		<property name="entityManagerFactory"
+			ref="entityManagerFactory" />
+	</bean></beans>
