@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+    http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd" version="1.0">
+    
+	<persistence-unit name="axleli" transaction-type="RESOURCE_LOCAL">
+		 <non-jta-data-source>java:/datagridDS</non-jta-data-source>
+		<class>com.axleli.server.domain.RelationshipMapping</class>
+		<class>com.axleli.server.domain.ItemAttributeType</class>
+		<class>com.axleli.server.domain.Item</class>
+		<class>com.axleli.server.domain.ImportJobs</class>
+		<class>com.axleli.server.domain.ItemAttrTypeDatatype</class>
+		<class>com.axleli.server.domain.ItemRelationshipRuleBase</class>
+		<class>com.axleli.server.domain.RelationshipAttributeType</class>
+		<class>com.axleli.server.domain.Relationship</class>
+		<class>com.axleli.server.domain.ItemType</class>
+		<class>com.axleli.server.domain.ItemAttribute</class>
+		<class>com.axleli.server.domain.RelationshipAttribute</class>
+		<class>com.axleli.server.domain.RelationshipType</class>
+		<class>com.axleli.server.domain.RelationshipMappingId</class>
+		<properties>
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
+            <property name="hibernate.connection.autocommit" value="false"/> 
+        </properties>
+		
+		<!-- properties>
+			<property name="javax.persistence.jdbc.driver"
+				value="org.h2.Driver" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:h2:tcp://localhost/~/test" />
+			<property name="javax.persistence.jdbc.user" value="sa" />
+		</properties-->
+		
+	</persistence-unit>
+
+</persistence>
