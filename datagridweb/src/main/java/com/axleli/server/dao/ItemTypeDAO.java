@@ -13,20 +13,13 @@ import org.springframework.transaction.annotation.Transactional;
 import com.axleli.server.domain.ItemType;
 
 @Repository
-public class ItemTypeDAO  {	
+public class ItemTypeDAO extends AbstractJpaDAO<ItemType> {	
 
-    @PersistenceContext
-    private EntityManager em;
+    //@PersistenceContext
+    //private EntityManager entityManager;
+	public ItemTypeDAO(){
+		setClazz(ItemType.class);
+	}
+	
 
-    public List<ItemType> findAllItemTypes() {
-       Query query = em.createQuery("from ItemType as itemType");
-       List<ItemType> resultList = query.getResultList();
-       return resultList; 
-    }
-    
-  
-    @Transactional(propagation=Propagation.MANDATORY, rollbackFor=Exception.class)
-    public void save(ItemType itemType){
-    	em.persist(itemType);
-    }
 }
