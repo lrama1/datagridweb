@@ -29,7 +29,7 @@ public class HomeController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("Number of itemTypes:" + itemTypeDAO.findAllItemTypes().size());
+		System.out.println("Number of itemTypes:" + itemTypeDAO.findAll().size());
 		return "/WEB-INF/jsps/home.jsp";
 	}
 	
